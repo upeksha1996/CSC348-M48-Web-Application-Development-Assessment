@@ -32,6 +32,9 @@
                             <th>
                                 Edit
                             </th>
+                            <th>
+                                Delete
+                            </th>
                         </tr>
 
                     </thead>
@@ -45,16 +48,25 @@
                                     {{ $item->name }}
                                 </td>
                                 <td>
-                                    <img src="{{ asset('uploads/category/' . $item->image) }}" alt="Img" width="50px"
-                                        height="50px" />
+                                    @if ($item->image)
+                                        <img src="{{ asset('uploads/category/' . basename($item->image)) }}" alt="Img"
+                                            width="50px" height="50px" />
+                                    @endif
                                 </td>
+
+
                                 <td>
                                     {{ $item->status == '1' ? 'Hidden' : 'Shown' }}
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-success">
+                                    <a href="{{ url('admin/edit-category/' . $item->id) }}" class="btn btn-success">
                                         Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url('admin/delete-category/' . $item->id) }}" class="btn btn-danger">
+                                        Delete
                                     </a>
                                 </td>
                             </tr>

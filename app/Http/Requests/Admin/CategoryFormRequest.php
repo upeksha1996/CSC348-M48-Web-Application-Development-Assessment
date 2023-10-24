@@ -46,10 +46,10 @@ class CategoryFormRequest extends FormRequest
                 'required', 'string'
             ],
             'navbar_status' => [
-                'nullable', 'boolean'
+                'nullable'
             ],
             'status' => [
-                'nullable', 'boolean'
+                'nullable'
             ],
         ];
 
