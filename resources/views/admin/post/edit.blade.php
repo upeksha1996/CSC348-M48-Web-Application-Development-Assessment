@@ -42,7 +42,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Description</label>
-                        <textarea rows="5" name="description" class="form-control">{{ $post->description }}</textarea>
+                        <textarea rows="5" name="description" id="mySummernote" class="form-control">{{ $post->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label>Youtube Iframe Link</label>
