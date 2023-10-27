@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Add Post')
+@section('title', 'Edit Post')
 
 @section('content')
     <div class="container-fluid px-4">
@@ -12,61 +12,67 @@
                 </div>
             @endif
             <div class="card-header">
-                <h4>Add Posts
-                    <a href="{{ url('admin/add-post') }}" class="btn btn-primary float-end">Add Posts</a>
+                <h4>Edit Posts
+                    <a href="{{ url('admin/posts') }}" class="btn btn-danger float-end">Back</a>
                 </h4>
             </div>
             <div class="card-body">
-                <form action="{{ url('admin/add-post') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('admin/update-post/' . $post->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label>Category</label>
-                        <select name="category_id" class="form-control">
+                        <select name="category_id" required class="form-control">
+                            <option value=""> -- Select Category -- </option>
                             @foreach ($category as $cateitem)
-                                <option value="{{ $cateitem->id }}">{{ $cateitem->name }}</option>
+                                <option value="{{ $cateitem->id }}"
+                                    {{ $post->category_id == $cateitem->id ? 'selected' : '' }}>
+                                    {{ $cateitem->name }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
                         <label>Post Name</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" value="{{ $post->name }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Slug</label>
-                        <input type="text" name="slug" class="form-control">
+                        <input type="text" name="slug" value="{{ $post->slug }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Description</label>
-                        <textarea rows="5" name="description" class="form-control"></textarea>
+                        <textarea rows="5" name="description" class="form-control">{{ $post->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label>Youtube Iframe Link</label>
-                        <textarea type="file" name="yt_iframe" class="form-control" rows="4"></textarea>
+                        <input type="text" name="yt_iframe" class="form-control" value="{{ $post->yt_iframe }}"
+                            rows="4">
                     </div>
                     <h6>SEO Tags</h6>
                     <div class="mb-3">
                         <label>Meta Title</label>
-                        <input type="text" name="meta_title" class="form-control">
+                        <input type="text" name="meta_title" value="{{ $post->meta_title }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Meta Description</label>
-                        <textarea rows="3" name="meta_description" class="form-control"></textarea>
+                        <textarea rows="3" name="meta_description" class="form-control">{{ $post->meta_description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label>Meta Keyword</label>
-                        <textarea rows="3" name="meta_keyword" class="form-control"></textarea>
+                        <textarea rows="3" name="meta_keyword" class="form-control">{{ $post->meta_keyword }}</textarea>
                     </div>
 
                     <h6>Status</h6>
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label>Status</label>
-                            <input type="checkbox" name="navbar_status">
+                            <input type="checkbox" value="{{ $post->status == '1' ? 'checked' : '' }}" name="status">
                         </div>
 
                         <div class="col-md-8">
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save Category</button>
+                                <button type="submit" class="btn btn-primary">Update Category</button>
                             </div>
                         </div>
                     </div>

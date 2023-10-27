@@ -6,7 +6,7 @@
         <div class="card mt-4">
             <div class="card-header">
                 <h4>View Posts
-                    <a href="{{ url('admin/add=post') }}" class="btn btn-primary float-end">Add Posts</a>
+                    <a href="{{ url('admin/add-post') }}" class="btn btn-primary float-end">Add Posts</a>
                 </h4>
             </div>
             <div class="card-body">
@@ -56,7 +56,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="{{ url('admin/edit-post/' . $item->id) }}" class="btn btn-success">
+                                    <a href="{{ url('admin/post/' . $item->id) }}" class="btn btn-success">
                                         Edit
                                     </a>
                                 </td>
