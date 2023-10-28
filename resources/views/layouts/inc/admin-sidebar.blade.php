@@ -35,9 +35,13 @@
                                     <a class="nav-link" href="{{ url('admin/posts') }}">View Post</a>
                                 </nav>
                             </div>
+                            <a class="nav-link" href={{ url('admin/users') }}>
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Users
+                            </a>
 
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Pages
@@ -75,7 +79,7 @@
                                         </nav>
                                     </div>
                                 </nav>
-                            </div>
+                            </div> --}}
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -87,9 +91,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
+                    {{-- <div class="sb-sidenav-footer"> --}}
+                    {{-- <div class="small">Logged in as:</div>
+                        Start Bootstrap --}}
+                    {{-- </div> --}}
                 </nav>
             </div>
