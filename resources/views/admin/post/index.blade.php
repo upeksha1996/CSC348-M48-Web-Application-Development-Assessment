@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container-fluid px-4">
-        <div class="card mt-4"> 
+        <div class="card mt-4">
             <div class="card-header">
                 <h4>View Posts
                     <a href="{{ url('admin/add-post') }}" class="btn btn-primary float-end">Add Posts</a>
@@ -14,7 +14,7 @@
                     <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
 
-                <table class="table table-bordered">
+                <table id="myDataTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>
