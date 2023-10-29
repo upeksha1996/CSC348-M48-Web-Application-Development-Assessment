@@ -25,9 +25,6 @@
                                         Posted By: {{ $postitem->user->name }}
                                     </span>
                                 </h6>
-
-
-
                             </div>
                         </div>
                     @empty
@@ -39,6 +36,9 @@
                             </div>
                         </div>
                     @endforelse
+                    <div class="your-paginate mt-2">
+                        {{ $post->links() }}
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div class="border p-2">
