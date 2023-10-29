@@ -17,12 +17,14 @@
     <!-- Scripts -->
 
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+
 
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -77,7 +79,9 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
+
+        @include('layouts.inc.frontend-navbar')
 
         <main class="py-4">
             @yield('content')
@@ -85,6 +89,7 @@
     </div>
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}" defer></script>
 </body>
 
 </html>
