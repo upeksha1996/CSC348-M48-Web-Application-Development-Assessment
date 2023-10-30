@@ -90,6 +90,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('layouts.inc.frontend-footer')
+
     </div>
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>

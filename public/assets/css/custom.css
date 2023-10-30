@@ -40,3 +40,10 @@
 	height: 34px;
 	width: 30px;
 }
+
+.underline {
+	height: 3px;
+	width: 60px;
+	background-color: #e71212 !important;
+	margin-bottom: 10px;
+}
