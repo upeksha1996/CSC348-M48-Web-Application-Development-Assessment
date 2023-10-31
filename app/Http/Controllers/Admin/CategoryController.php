@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 
-class CategoryController extends Controller
+class  CategoryController extends Controller
 {
     public function index()
     {
@@ -98,8 +98,13 @@ class CategoryController extends Controller
         $category = Category::find($category_id);
 
         if ($category) {
+            $destination = 'uploads/category/' . $category->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $category->posts()->delete();
             $category->delete();
-            return redirect('/admin/category')->with('message', 'Category Deleted Successfully');
+            return redirect('/admin/category')->with('message', 'Category Deleted with its Posts Successfully');
         } else {
             return redirect('/admin/category')->with('message', 'No Category ID Found');
         }
