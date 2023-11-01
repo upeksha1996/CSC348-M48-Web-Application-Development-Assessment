@@ -57,12 +57,21 @@
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 inner  display-contents">
                      @if (Auth::check())
                          <li>
-                             <a class="nav-link btn btn-danger" href="{{ route('logout') }}"
+                             <a class="nav-link btn btn-danger border-0 rounded-0" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Logout</a>
                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                  @csrf
                              </form>
+                         </li>
+                     @else
+                         <li>
+                             <a class="nav-link btn btn-primary border-0 rounded-0" href="/login">LogIn</a>
+
+                         </li>
+                         <li>
+                             <a class="nav-link btn btn-secondary border-0 rounded-0" href="/register">Register</a>
+
                          </li>
                      @endif
 
