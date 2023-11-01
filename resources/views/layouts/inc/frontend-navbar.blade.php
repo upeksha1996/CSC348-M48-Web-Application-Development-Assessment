@@ -1,6 +1,6 @@
- <div class="global-navbar bg-white">
-     <div class="container">
-         <div class="row">
+ {{-- <div class="global-navbar bg-white"> --}}
+ {{-- <div class="container"> --}}
+ {{-- <div class="row">
              <div class="col-md-3">
                  <img src="{{ asset('assets/images/logo.png') }}" width="40px" height="40px" alt="logo" />
              </div>
@@ -11,9 +11,9 @@
                      </h5>
                  </div>
              </div>
-         </div>
-     </div>
- </div>
+         </div> --}}
+ {{-- </div> --}}
+ {{-- </div> --}}
  <div class="sticky-top">
      <nav class="navbar navbar-expand-lg navbar-dark bg-green">
          <div class="container">
@@ -22,7 +22,7 @@
                  aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
                          <a class="nav-link" href="{{ url('/') }}">Home</a>
@@ -53,6 +53,8 @@
                                  href="{{ url('tutorial/' . $cateitem->slug) }}">{{ $cateitem->name }}</a>
                          </li>
                      @endforeach
+                 </ul>
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 inner  display-contents">
                      @if (Auth::check())
                          <li>
                              <a class="nav-link btn btn-danger" href="{{ route('logout') }}"
