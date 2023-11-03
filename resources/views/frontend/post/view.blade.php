@@ -35,8 +35,8 @@
                                  @csrf
                                  <input type="hidden" name="post_slug" value="{{ $post->slug }}">
                                  <textarea name="comment_body" class="form-control" rows="3" required></textarea>
-                                 <button type="submit" class="btn btn-primary mt-3">
-                                     Submit
+                                 <button type="submit" class="btn btn-success mt-3">
+                                     Add Comment
                                  </button>
                              </form>
                          </div>
@@ -62,6 +62,49 @@
                                      </div>
                                  @endif
 
+                                 @forelse ($comment->replies as $reply)
+                                     <div class="card card-body shadow-sm mt-3">
+                                         <div class="detail-area">
+                                             <h6 class="user-name mb-1">
+                                                 @if ($reply->user)
+                                                     {{ $reply->user->name }}
+                                                 @endif
+                                                 <small class="ms-3 text-primary">
+                                                     Replied on: {{ $reply->created_at->format('d-m-Y') }}
+                                                 </small>
+                                             </h6>
+                                             <p class="user-comment mb-1">
+                                                 {!! $reply->reply_body !!}
+                                             </p>
+                                         </div>
+                                         @if (Auth::check() && Auth::id() == $reply->user_id)
+                                             <div>
+                                                 <a href="" class="btn btn-primary btn-sm me-2">Edit</a>
+                                                 <a href="" class="btn btn-danger btn-sm me-2">Delete</a>
+                                             </div>
+                                         @endif
+
+
+                                     </div>
+                                 @empty
+                                 @endforelse
+
+
+
+
+                                 <div class="mt-3 ">
+                                     <h6 class="card-title">Reply</h6>
+                                     <form action="{{ url('replies') }}" method="POST">
+                                         @csrf
+                                         <input type="hidden" name="post_slug" value="{{ $post->slug }}">
+                                         <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                         <textarea name="reply_body" class="form-control" rows="3" required></textarea>
+                                         <button type="submit" class="btn btn-warning mt-3">
+                                             Add Reply
+                                         </button>
+                                     </form>
+                                 </div>
+
                              </div>
                          @empty
                              <div class="card card-body shadow-sm mt-3">
@@ -74,22 +117,7 @@
                  </div>
 
                  <div class="col-md-4">
-                     <div class="border p-2 my-2">
-                         <h4>
-                             Advertising Area
-                         </h4>
-                     </div>
-                     <div class="border p-2 my-2">
-                         <h4>
-                             Advertising Area
-                         </h4>
-                     </div>
-                     <div class="border p-2 my-2">
-                         <h4>
-                             Advertising Area
-                         </h4>
-                     </div>
-                     <div class="card mt-3">
+                     <div class="card ">
                          <div class="card-header">
                              <h4>
                                  Latest Posts

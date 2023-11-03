@@ -28,6 +28,7 @@ Route::get('tutorial/{category_slug}/{post_slug}', [App\Http\Controllers\Fronten
 
 //comment system
 Route::post('comments', [App\Http\Controllers\Frontend\CommentController::class, 'store']);
+Route::post('replies', [App\Http\Controllers\Frontend\ReplyController::class, 'store']);
 
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
