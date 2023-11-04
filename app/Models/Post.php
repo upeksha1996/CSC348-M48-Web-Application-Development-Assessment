@@ -36,4 +36,8 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class, 'post_id', 'id');
     }
+    public function visitors()
+    {
+        return $this->hasMany(visitors::class, 'post_id', 'id');
+    }
 }

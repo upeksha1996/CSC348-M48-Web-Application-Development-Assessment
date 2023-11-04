@@ -21,6 +21,16 @@
                      </div>
                      <div class="card card-shadow mt-4">
                          <div class="card-body post-description">
+                             <div>
+                                 <h6>
+                                     Unique Views: {{$unique_views}}
+                                 </h6>
+                             </div>
+                             <div>
+                                 <h6>
+                                     All Views: {{$all_views}}
+                                 </h6>
+                             </div>
                              {!! $post->description !!}
                          </div>
                      </div>
@@ -109,7 +119,7 @@
                          @empty
                              <div class="card card-body shadow-sm mt-3">
                                  <h6>
-                                     No Comments Yes.
+                                     No Comments Yet.
                                  </h6>
                              </div>
                          @endforelse
