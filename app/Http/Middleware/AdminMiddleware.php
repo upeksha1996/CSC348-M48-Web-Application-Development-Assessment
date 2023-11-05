@@ -22,8 +22,8 @@ class AdminMiddleware
             if (Auth::user()->role_as == '1') {
                 return $next($request);
             } else {
-                return $next($request);
-                // return redirect('/home')->with('status', 'Access Denied! As you are not an Admin');
+                // return $next($request);
+                return redirect('user/dashboard')->with('status', 'Welcome to User Dashboard');
             }
         } else {
             return redirect('/login')->with('status', 'Please Login First');

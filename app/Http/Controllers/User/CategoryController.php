@@ -32,14 +32,14 @@ class CategoryController extends Controller
         $category->slug =
             Str::slug($data['slug']);
         $category->description = $data['description'];
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/category'), $filename);
-            $category->image = $filename;
-        }
+        // if ($request->hasFile('image')) {
+        //     $file = $request->file('image');
+        //     $filename = time() . '.' . $file->getClientOriginalExtension();
+        //     $file->move(public_path('uploads/category'), $filename);
+        //     $category->image = $filename;
+        // }
 
-        $category->image = $data['image'];
+        $category->image = 'default_image.jpg';
         $category->meta_title = $data['meta_title'];
         $category->meta_description = $data['meta_description'];
         $category->meta_keyword = $data['meta_keyword'];
@@ -67,19 +67,19 @@ class CategoryController extends Controller
         $category->slug =
             Str::slug($data['slug']);
         $category->description = $data['description'];
-        if ($request->hasFile('image')) {
+        // if ($request->hasFile('image')) {
 
-            $destination = 'uploads/category' . $category->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
-            $file = $request->file('image');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/category'), $filename);
-            $category->image = $filename;
-        }
+        //     $destination = 'uploads/category' . $category->image;
+        //     if (File::exists($destination)) {
+        //         File::delete($destination);
+        //     }
+        //     $file = $request->file('image');
+        //     $filename = time() . '.' . $file->getClientOriginalExtension();
+        //     $file->move(public_path('uploads/category'), $filename);
+        //     $category->image = $filename;
+        // }
 
-        $category->image = $data['image'];
+        $category->image = 'default_image.jpg';
         $category->meta_title = $data['meta_title'];
         $category->meta_description = $data['meta_description'];
         $category->meta_keyword = $data['meta_keyword'];

@@ -47,15 +47,19 @@
                              ->where('status', '0')
                              ->get();
                      @endphp
-                     @foreach ($categories as $cateitem)
+                     {{-- @foreach ($categories as $cateitem)
                          <li class="nav-item">
                              <a class="nav-link"
                                  href="{{ url('tutorial/' . $cateitem->slug) }}">{{ $cateitem->name }}</a>
                          </li>
-                     @endforeach
+                     @endforeach --}}
                  </ul>
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 inner  display-contents">
                      @if (Auth::check())
+                         <li>
+                             <a class="nav-link btn btn-success border-0 rounded-0"
+                                 href="{{ url('user/dashboard') }}">Dashboard</a>
+                         </li>
                          <li>
                              <a class="nav-link btn btn-danger border-0 rounded-0" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();

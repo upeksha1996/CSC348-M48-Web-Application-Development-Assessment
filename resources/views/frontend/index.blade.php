@@ -82,7 +82,7 @@
         </div>
     </div>
 
-    <div class="py-5 bg-white">
+    <div class="py-3 bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -91,7 +91,7 @@
                     </h4>
                     <div class="underline"></div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     @foreach ($latest_posts as $latest_post_item)
                         <div class="card card-body bg-gray shadow mb-3">
                             <a href="{{ url('tutorial/' . $latest_post_item->category->slug . '/' . $latest_post_item->slug) }}"
@@ -106,13 +106,13 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <div class="border text-center p-3">
                         <h3>
                             Advertise here
                         </h3>
                     </div>
-                </div>
+                </div> --}}
 
 
 
