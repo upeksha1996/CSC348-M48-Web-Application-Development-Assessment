@@ -47,7 +47,7 @@
                                 Category Name
                             </th>
                             <th>
-                                Image
+                                Slug
                             </th>
                             <th>
                                 Status
@@ -71,10 +71,11 @@
                                     {{ $item->name }}
                                 </td>
                                 <td>
-                                    @if ($item->image)
+                                    {{ $item->slug }}
+                                    {{-- @if ($item->image)
                                         <img src="{{ asset('uploads/category/' . basename($item->image)) }}" alt="Img"
                                             width="50px" height="50px" />
-                                    @endif
+                                    @endif --}}
                                 </td>
 
 
