@@ -28,7 +28,7 @@ class FrontendController extends Controller
         }
     }
 
-    public function viewPost(Request $request,string $category_slug, string $post_slug)
+    public function viewPost(Request $request, string $category_slug, string $post_slug)
     {
         $category = Category::where('slug', $category_slug)->where('status', '0')->first();
         if ($category) {
@@ -37,14 +37,15 @@ class FrontendController extends Controller
             $latest_posts = Post::where('category_id', $category->id)->where('status', '0')->orderBy('created_at', 'DESC')->get()->take(5);
             $all_views = Visitors::where('post_id', $post->id)->count();
             $unique_views = Visitors::where('post_id', $post->id)->distinct('ip')->count('ip');
+            if (Auth::check()) {
+                Visitors::create([
+                    'post_id' => $post->id,
+                    'user_id' => Auth::user()->id,
+                    'ip' => $ip,
+                ]);
+            }
 
-            Visitors::create([
-                'post_id' => $post->id,
-                'user_id' => Auth::user()->id,
-                'ip' => $ip,
-            ]);
-           
-             return view('frontend.post.view', compact('post',  'latest_posts', 'all_views','unique_views'));
+            return view('frontend.post.view', compact('post',  'latest_posts', 'all_views', 'unique_views'));
         } else {
             return redirect('/');
         }
