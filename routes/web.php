@@ -54,7 +54,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
 });
 
-Route::prefix('user')->middleware(['auth', 'isUser'])->group(function () {
+Route::prefix('user')->middleware(['auth', 'auth'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\User\DashboardController::class, 'index']);
     Route::get('/category', [App\Http\Controllers\User\CategoryController::class, 'index']);

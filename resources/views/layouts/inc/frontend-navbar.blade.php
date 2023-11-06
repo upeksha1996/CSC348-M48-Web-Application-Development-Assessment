@@ -56,10 +56,18 @@
                  </ul>
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 inner  display-contents">
                      @if (Auth::check())
-                         <li>
-                             <a class="nav-link btn btn-success border-0 rounded-0"
-                                 href="{{ url('user/dashboard') }}">Dashboard</a>
-                         </li>
+                         @if (Auth::user()->role_as == '0')
+                             <li>
+                                 <a class="nav-link btn btn-success border-0 rounded-0"
+                                     href="{{ url('user/dashboard') }}">Dashboard</a>
+                             </li>
+                         @else
+                             <li>
+                                 <a class="nav-link btn btn-success border-0 rounded-0"
+                                     href="{{ url('admin/dashboard') }}">Admin Dashboard</a>
+                             </li>
+                         @endif
+
                          <li>
                              <a class="nav-link btn btn-danger border-0 rounded-0" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
