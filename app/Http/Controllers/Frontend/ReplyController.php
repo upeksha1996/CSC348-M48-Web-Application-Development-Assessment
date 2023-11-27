@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Mail\MailNotification;
+use App\Mail\ReplyMailNotification;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Post;
@@ -26,7 +27,6 @@ class ReplyController extends Controller
             $post = Post::where('slug', $request->post_slug)->where('status', '0')->first();
             $comment = Comment::where('id', $request->comment_id)->first();
             $commentUser = Comment::with('user')->where('id', $request->comment_id)->first();
-            echo "<script>console.log('This will be printed in the browser console',$commentUser)</script>";
 
 
             if ($post) {
@@ -36,7 +36,7 @@ class ReplyController extends Controller
                     'comment_id' => $comment->id,
                     'reply_body' => $request->reply_body,
                 ]);
-                Mail::to($commentUser->user->email)->send(new MailNotification($request->reply_body));
+                Mail::to($commentUser->user->email)->send(new ReplyMailNotification($request->reply_body));
 
                 return redirect()->back()->with('message', 'Replied Successfully');
             } else {
