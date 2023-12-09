@@ -5,7 +5,7 @@
 @section('content')
 
 
-    <div class="bg-success py-5">
+    {{-- <div class="bg-success py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -14,7 +14,6 @@
                             <div class="item">
                                 <a href="{{ url('tutorial/' . $all_cate_item->slug) }}" class="text-decoration-none">
                                     <div class="card">
-                                        {{-- <img src="{{ asset('uploads/category/' . $all_cate_item->image) }}" alt="Image"> --}}
                                         <div class="card-body text-center py-3">
                                             <h5 class="m-0">
                                                 {{ $all_cate_item->name }}
@@ -29,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="py-1 bg-light">
         <div class="container">
             <div class="border text-center p-3">

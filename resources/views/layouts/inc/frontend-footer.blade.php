@@ -14,9 +14,7 @@
                             Upeshas Blog
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
+                           Discover stories, thinking, and expertise from writers on any topic.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -25,18 +23,18 @@
 
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Stories</h6>
                         <p>
-                            <a class="text-white">MDBootstrap</a>
+                            <a class="text-white">Thinking</a>
                         </p>
                         <p>
-                            <a class="text-white">MDWordPress</a>
+                            <a class="text-white">Expertise</a>
                         </p>
                         <p>
-                            <a class="text-white">BrandFlow</a>
+                            <a class="text-white">Writers</a>
                         </p>
                         <p>
-                            <a class="text-white">Bootstrap Angular</a>
+                            <a class="text-white">Topics</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -49,16 +47,16 @@
                             Useful links
                         </h6>
                         <p>
-                            <a class="text-white">Your Account</a>
+                            <a class="text-white">Programming</a>
                         </p>
                         <p>
-                            <a class="text-white">Become an Affiliate</a>
+                            <a class="text-white">Data Science</a>
                         </p>
                         <p>
-                            <a class="text-white">Shipping Rates</a>
+                            <a class="text-white">Technology</a>
                         </p>
                         <p>
-                            <a class="text-white">Help</a>
+                            <a class="text-white">Self Improvement</a>
                         </p>
                     </div>
 
@@ -68,7 +66,7 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <p><i class="fas fa-home mr-3"></i> England, NY 10012, US</p>
                         <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                         <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
