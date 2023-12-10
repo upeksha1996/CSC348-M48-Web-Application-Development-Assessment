@@ -19,7 +19,8 @@
                              {{ $post->category->name . '/' . $post->name }}
                          </h6>
                          <h6>
-                            Posted By: {{ $post->user->name }}
+                            Posted By:
+                            <a class="ml-2" href="{{ url('posts/' . $post->user->id) }}">{{ $post->user->name }}</a>
                          </h6>
                      </div>
                      <div class="card card-shadow mt-4">

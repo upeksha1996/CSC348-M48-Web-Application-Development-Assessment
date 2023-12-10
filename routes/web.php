@@ -27,7 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 Route::get('tutorial/{category_slug}/{post_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewPost']);
-
+//users posts
+Route::get('/posts/{user_id}', [App\Http\Controllers\Frontend\FrontendController::class, 'usersPostsList']);
 //comment system
 Route::post('comments', [App\Http\Controllers\Frontend\CommentController::class, 'store']);
 Route::post('replies', [App\Http\Controllers\Frontend\ReplyController::class, 'store']);
@@ -75,6 +76,6 @@ Route::prefix('user')->middleware(['auth', 'auth'])->group(function () {
     Route::get('/delete-post/{post_id}', [App\Http\Controllers\User\PostController::class, 'destroy']);
 
     Route::get('users', [App\Http\Controllers\User\UserController::class, 'index']);
-    Route::get('user/{user_id}', [App\Http\Controllers\User\UserController::class, 'edit']);
+    Route::get('posts/{user_id}', [App\Http\Controllers\User\PostController::class, 'index']);
     Route::put('update-user/{user_id}', [App\Http\Controllers\User\UserController::class, 'update']);
 });

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Visitors;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,5 +51,18 @@ class FrontendController extends Controller
         } else {
             return redirect('/');
         }
+    }
+
+    public function usersPostsList($user_id)
+    {
+        $all_categories = Category::where('status', '0')->get();
+        $comment = Comment::where('user_id', $user_id)->get();
+        $user = User::find($user_id);
+        $latest_posts = Post::where('status', '0')
+        ->where('created_by', $user_id)
+            ->orderBy('created_at', 'DESC')
+            ->take(15)
+            ->get();
+        return view('frontend.usersPosts.index', compact('all_categories', 'latest_posts', 'user', 'comment'));
     }
 }
