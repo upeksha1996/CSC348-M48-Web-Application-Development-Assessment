@@ -1,7 +1,7 @@
  {{-- <div class="global-navbar bg-white"> --}}
  {{-- <div class="container"> --}}
- {{-- <div class="row">
-             <div class="col-md-3">
+ <div class="row">
+             {{-- <div class="col-md-3">
                  <img src="{{ asset('assets/images/logo.png') }}" width="40px" height="40px" alt="logo" />
              </div>
              <div class="col-md-9 my-auto">
@@ -10,8 +10,8 @@
                          Advertise Here
                      </h5>
                  </div>
-             </div>
-         </div> --}}
+             </div> --}}
+         </div>
  {{-- </div> --}}
  {{-- </div> --}}
  <div class="sticky-top">
